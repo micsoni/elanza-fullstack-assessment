@@ -8,7 +8,7 @@ import { Redirect } from "react-router-dom";
 function CareRequestsCardsPage() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const requests = useSelector((state) => state.careRequest);
+  const requests = useSelector((state) => state.careRequests);
 
   const openRequests = requests.filter(
     (careRequest) => careRequest.status === "open"
