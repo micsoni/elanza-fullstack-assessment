@@ -22,8 +22,8 @@ function CareRequestsCardsPage() {
     return <Redirect to="/" />;
   }
 
-  const createCards = (requests) => {
-    const cards = requests.map((careRequest) => {
+  const createCards = () => {
+    const cards = openRequests.map((careRequest) => {
       return <CareRequestsCards key={careRequest.id} {...careRequest} />;
     });
     return cards;
@@ -33,7 +33,8 @@ function CareRequestsCardsPage() {
     <div className="main">
       <Container>
         <h3>Open Requests</h3>
-        <Row>{createCards(openRequests)} </Row>
+        {!openRequests.length && <p>No open requests</p>}
+        <Row>{createCards()} </Row>
       </Container>
     </div>
   );

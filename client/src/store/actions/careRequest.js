@@ -33,3 +33,28 @@ export function fetchCareRequestAction() {
     dispatch(action);
   };
 }
+
+export function takenCareRequest(takenRequest) {
+  return {
+    type: "APPLY_CARE_REQUEST",
+    payload: takenRequest,
+  };
+}
+
+export function applyToCareRequest(careGiver, id) {
+  return async function (dispatch) {
+    const applyRequest = {
+      id,
+      careGiver,
+    };
+    const response = await fetch("/api/careRequest", {
+      method: "PUT",
+      body: JSON.stringify(applyRequest),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+    const action = takenCareRequest(response);
+    dispatch(action);
+  };
+}

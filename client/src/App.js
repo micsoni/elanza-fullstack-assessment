@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/" component={Homepage} />
         <Route
           exact
-          path="/all-care-requests"
+          path="/open-care-requests"
           component={OpenCareRequestsPage}
         />
         <Route path="/care-request/:id" component={CareDetailsPage} />
