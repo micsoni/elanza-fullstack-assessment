@@ -27,7 +27,7 @@ function Homepage() {
       </div>
     );
   }
-  return <Redirect to="/all-care-requests" />;
+  return <Redirect to="/all-care-request" />;
 }
 
 export default Homepage;
