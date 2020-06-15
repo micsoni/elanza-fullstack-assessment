@@ -18,3 +18,18 @@ export function createNewCareRequest(careRequest) {
     dispatch(action);
   };
 }
+
+export function fetchedRequests(requests) {
+  return {
+    type: "FETCH_CARE_REQUEST",
+    payload: requests,
+  };
+}
+
+export function fetchCareRequestAction() {
+  return async function (dispatch) {
+    const response = await fetch("/api/careRequest").then((res) => res.json());
+    const action = fetchedRequests(response);
+    dispatch(action);
+  };
+}

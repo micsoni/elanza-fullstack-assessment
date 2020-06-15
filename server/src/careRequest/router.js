@@ -16,4 +16,8 @@ router.post("/api/careRequest", function (req, res) {
   return res.json(careRequest);
 });
 
+router.get("/api/careRequest", function (req, res) {
+  return res.json(careRequests);
+});
+
 module.exports = router;
