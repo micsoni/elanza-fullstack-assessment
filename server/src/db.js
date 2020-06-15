@@ -24,6 +24,6 @@ exports.careRequests = [
     endDate: new Date("2020-06-17"),
     extraInfo: "Lorem Ipsum",
     name: "Simone",
-    status: "open",
+    status: "closed",
   },
 ];

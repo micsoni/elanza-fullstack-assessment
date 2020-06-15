@@ -5,6 +5,9 @@ export default function (state = initialState, action) {
     case "CREATE_CARE_REQUEST": {
       return [action.payload, ...state];
     }
+    case "FETCH_CARE_REQUEST": {
+      return action.payload;
+    }
     default:
       return state;
   }
