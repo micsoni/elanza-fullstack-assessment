@@ -7,6 +7,7 @@ exports.careRequests = [
     extraInfo: "Lorem Ipsum",
     name: "Simone",
     status: "open",
+    careGiver: null,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ exports.careRequests = [
     extraInfo: "Lorem Ipsum",
     name: "Simone",
     status: "open",
+    careGiver: null,
   },
   {
     id: 3,
@@ -25,5 +27,6 @@ exports.careRequests = [
     extraInfo: "Lorem Ipsum",
     name: "Simone",
     status: "closed",
+    careGiver: null,
   },
 ];

@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCareRequestAction } from "../store/actions/careRequest";
+import ApplyFormContainer from "../components/ApplyFormContainer";
 
 function CareDetails(props) {
+  const [showApply, setShowApply] = useState(false);
   const user = useSelector((state) => state.user);
   const careRequests = useSelector((state) => state.careRequests);
+
   const dispatch = useDispatch();
+
   const careId = props.match.params.id;
   const currentRequest = careRequests.find(
     (request) => request.id === parseInt(careId)
@@ -46,7 +50,15 @@ function CareDetails(props) {
             <br />
           </Card.Text>
           <Card.Text>Extra information: {currentRequest.extraInfo}</Card.Text>
+          <Button
+            variant="info"
+            onClick={() => setShowApply(!showApply)}
+            disabled={currentRequest.status === "closed"}
+          >
+           I want to apply to this request
+          </Button>
         </Card.Body>
+        {showApply && <ApplyFormContainer id={currentRequest.id} />}
         <Card.Footer className="text-muted">
           Status: {currentRequest.status}
         </Card.Footer>

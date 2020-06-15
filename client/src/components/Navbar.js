@@ -6,9 +6,9 @@ import { useSelector } from "react-redux";
 const navigationConfig = {
   client: [
     { label: "Create Care Request", link: "/new-care-request" },
-    { label: "All care Requests", link: "/all-care-requests" },
+    { label: "Open Care Requests", link: "/open-care-requests" },
   ],
-  careGiver: [{ label: "All care Requests", link: "/all-care-requests" }],
+  careGiver: [{ label: "Open Care Requests", link: "/open-care-requests" }],
 };
 
 function Menu() {
