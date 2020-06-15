@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import CareFormPage from "./pages/CareFormPage";
 import OpenCareRequestsPage from "./pages/OpenCareRequestsPage";
+import CareDetailsPage from "./pages/CareDetailsPage";
 import Menu from "./components/Navbar";
 import "./style/App.css";
 import logo from "./logo.png";
@@ -19,6 +20,7 @@ function App() {
           path="/all-care-requests"
           component={OpenCareRequestsPage}
         />
+        <Route path="/care-request/:id" component={CareDetailsPage} />
         <Route path="/new-care-request" component={CareFormPage} />
       </Switch>
     </React.Fragment>

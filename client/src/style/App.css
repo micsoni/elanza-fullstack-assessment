@@ -28,3 +28,8 @@
 .cardin {
   padding-top: 10px;
 }
+
+.disabledLink {
+  text-decoration: none;
+  pointer-events:none;
+}
