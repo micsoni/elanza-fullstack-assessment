@@ -1,8 +1,22 @@
 .main {
   text-align: center;
+  padding: 20px;
 }
 
 .logo {
   width: 180px;
   padding: 20px;
+}
+
+.bg {
+  background-color: #52babd;
+}
+
+.navbar-dark .navbar-nav.white .nav-link {
+  color: white;
+}
+
+.confirmed {
+  padding: 20px;
+  text-align: center;
 }
